@@ -28,7 +28,7 @@ const SinglePost = async ({
               alt={post.title}
               fill
               sizes='100vw'
-              className='object-cover object-top'
+              className='object-cover object-center'
               quality={100}
             />
           </div>

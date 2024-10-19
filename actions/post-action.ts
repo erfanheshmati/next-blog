@@ -3,6 +3,7 @@
 import prismadb from '@/libs/prismadb';
 import { revalidatePath } from 'next/cache';
 
+// Create New Post
 export const CreatePostAction = async (formdata: FormData) => {
   try {
     const { title, body, iamge } = Object.fromEntries(formdata);
@@ -25,9 +26,11 @@ export const CreatePostAction = async (formdata: FormData) => {
     return { success: true };
   } catch (error) {
     console.log('CreatePostAction', error);
+    return { success: false };
   }
 };
 
+// Delete Post
 export const DeletePostAction = async (id: number) => {
   try {
     await prismadb.post.delete({
@@ -39,5 +42,6 @@ export const DeletePostAction = async (id: number) => {
     revalidatePath('/admin');
   } catch (error) {
     console.log('DeletePostAction', error);
+    return { success: false };
   }
 };

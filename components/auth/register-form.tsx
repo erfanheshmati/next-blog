@@ -20,28 +20,32 @@ const RegisterForm = () => {
           });
         }
       }}
+      autoComplete='off'
       className='mx-auto flex w-96 flex-col gap-y-5'
     >
-      <h2 className='text-3xl font-bold'>نام نویسی</h2>
+      <h2 className='text-center text-3xl font-bold'>نام نویسی</h2>
       <input
         type='text'
         placeholder='نام'
         className='rounded-md border p-2 shadow-sm'
         name='name'
+        required
       />
       <input
         type='email'
         placeholder='ایمیل'
         className='rounded-md border p-2 shadow-sm'
         name='email'
+        required
       />
       <input
         type='password'
         placeholder='رمز عبور'
         className='rounded-md border p-2 shadow-sm'
         name='password'
+        required
       />
-      <SubmitButton />
+      <SubmitButton submitValue='عضویت' />
     </form>
   );
 };

@@ -30,7 +30,6 @@ const AdminPostList = async () => {
             </div>
             <div className='flex flex-col gap-y-2'>
               <DeletePostButton id={post.id} />
-
               <Link
                 href={`/blog/${post.address}`}
                 className='rounded-md bg-gray-100 p-4 text-blue-500 shadow-md hover:bg-gray-200'

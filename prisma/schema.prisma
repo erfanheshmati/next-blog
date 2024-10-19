@@ -25,17 +25,16 @@ model User {
   hashedPassword String
   role           Role   @default(USER)
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
 
 model Post {
-  id Int @id @unique @default(autoincrement())
-
-  title   String
-  address String @unique
-  body    String
-  image   String
+  id        Int @id @unique @default(autoincrement())
+  title     String
+  address   String @unique
+  body      String
+  image     String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

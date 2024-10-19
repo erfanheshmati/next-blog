@@ -15,7 +15,7 @@ const UserAvatar = async ({ session }: UserAvatarProps) => {
           href='/login'
           className='rounded-md bg-black px-3 py-2 text-white hover:bg-gray-800'
         >
-          ورود / ثبت نام
+          ورود | ثبت نام
         </Link>
       </div>
     );

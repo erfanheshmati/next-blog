@@ -14,6 +14,7 @@ const NewPostForm = () => {
         formRef.current?.reset(); // In order to reset form after submission
         await CreatePostAction(formdata);
       }}
+      // autoComplete='off'
       className='space-y-6'
     >
       <div className='flex flex-col gap-y-1'>
@@ -23,6 +24,7 @@ const NewPostForm = () => {
           className='rounded-md border p-2 shadow-sm'
           placeholder='پست جدید'
           name='title'
+          required
         />
       </div>
       <div className='flex flex-col gap-y-1'>
@@ -32,6 +34,7 @@ const NewPostForm = () => {
           className='rounded-md border p-2 shadow-sm'
           placeholder='شرح پست'
           name='body'
+          required
         />
       </div>
       <div className='flex flex-col gap-y-1'>
@@ -41,9 +44,10 @@ const NewPostForm = () => {
           className='rounded-md border p-2 shadow-sm'
           placeholder='آدرس تصویر'
           name='iamge'
+          required
         />
       </div>
-      <SubmitButton />
+      <SubmitButton submitValue='ثبت' />
     </form>
   );
 };

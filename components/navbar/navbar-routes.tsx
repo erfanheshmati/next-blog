@@ -45,6 +45,7 @@ const NavbarRoutes = ({ session, vertical = false }: NavbarRoutesProps) => {
         </Link>
       ))}
 
+      {/* Admin Route */}
       {session?.user.userRole === 'ADMIN' && (
         <Link
           href='/admin'

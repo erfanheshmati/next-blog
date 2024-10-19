@@ -5,13 +5,14 @@ import { MoveLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// Get the first words of each blog description to show in cards
 const getFirstWords = (input: string, numWords: number) => {
   const words = input.split(' ');
   const firstWords = words.slice(0, numWords);
   return firstWords.join(' ');
 };
 
-const blog = async () => {
+const Blog = async () => {
   const posts = await prismadb.post.findMany({
     orderBy: {
       id: 'desc',
@@ -26,7 +27,7 @@ const blog = async () => {
             <Link
               key={post.id}
               href={`/blog/${post.address}`}
-              className='flex flex-row-reverse justify-between gap-y-1 pt-8 sm:flex-col sm:rounded-md sm:border sm:pt-0 sm:shadow-lg sm:transition sm:duration-500 sm:ease-out sm:hover:scale-105 sm:hover:shadow-2xl'
+              className='flex flex-row justify-between gap-4 gap-y-1 pt-8 sm:flex-col sm:rounded-md sm:border sm:pt-0 sm:shadow-lg sm:transition sm:duration-500 sm:ease-out sm:hover:scale-105 sm:hover:shadow-2xl'
             >
               <div className='relative h-44 w-48 overflow-hidden rounded-md sm:w-full sm:rounded-b-none sm:rounded-t-md'>
                 <Image
@@ -34,10 +35,10 @@ const blog = async () => {
                   alt={post.title}
                   fill
                   sizes='100vw'
-                  className='object-cover object-top'
+                  className='object-cover object-center'
                 />
               </div>
-              <div className='flex flex-col justify-between p-2'>
+              <div className='flex flex-col justify-between py-1 sm:p-2'>
                 <div className='space-y-3'>
                   <h2 className='font-bold'>{post.title}</h2>
                   <p className='text-gray-600'>
@@ -52,9 +53,14 @@ const blog = async () => {
             </Link>
           ))}
         </div>
+        {posts.length === 0 && (
+          <div className='mt-10 text-center'>
+            <span>هیچ پستی برای نمایش وجود ندارد.</span>
+          </div>
+        )}
       </Container>
     </div>
   );
 };
 
-export default blog;
+export default Blog;

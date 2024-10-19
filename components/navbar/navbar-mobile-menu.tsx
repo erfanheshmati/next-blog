@@ -14,12 +14,11 @@ type NavbarMobileMenuProps = {
 const NavbarMobileMenu = ({ session }: NavbarMobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
     <div>
+      {/* Navbar Open-Close Button */}
       <button
         className='rounded-md p-2 hover:bg-gray-200'
         onClick={(e) => {
@@ -30,6 +29,7 @@ const NavbarMobileMenu = ({ session }: NavbarMobileMenuProps) => {
         <Menu className='size-8' />
       </button>
 
+      {/* Navbar View */}
       {isOpen &&
         createPortal(
           <div
@@ -49,6 +49,8 @@ const NavbarMobileMenu = ({ session }: NavbarMobileMenuProps) => {
               </button>
             </div>
             <div className='border-b'></div>
+
+            {/* Navbar Links */}
             <div className='flex'>
               <NavbarRoutes session={session} vertical />
             </div>

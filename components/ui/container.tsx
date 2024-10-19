@@ -9,7 +9,7 @@ type ContainerProps = {
 const Container = ({ children, className, isFullHeight }: ContainerProps) => {
   return (
     <div
-      className={cn('mx-auto max-w-7xl px-5 md:px-3', className, {
+      className={cn('mx-auto max-w-7xl px-4', className, {
         'h-full': isFullHeight,
       })}
     >

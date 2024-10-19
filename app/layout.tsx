@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Vazirmatn } from 'next/font/google';
 import './globals.css';
+
+// Components
 import Navbar from '@/components/navbar/navbar';
 import Footer from '@/components/footer/footer';
 
